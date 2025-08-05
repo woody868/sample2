@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="profile2_2.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="tab-navigation">
+            <button class="tab tab-active" onclick="switchTab('profile', this)">Profile</button>
+            <button class="tab tab-non-active" onclick="switchTab('experience', this)">Experience</button>
+        </div>
+
+        <!-- 콘텐츠 영역 (선택된 탭에 맞춰 보여줄 컨텐츠) -->
+        <div class="tab-content">
+
+            <div id="profile" class="content content-active">
+                <div class="left-con">
+                    <h1>만나서</h1>
+                    <h1>반가워요:)</h1>
+                    <div></div>
+                </div>
+
+                <div class="right-con">
+                    <h1>Profile 내용이 여기에 들어갑니다</h1>
+                </div>
+            </div>
+
+            <div id="experience" class="content">
+                <p>Experience 내용이 여기에 들어갑니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(contentId, btn) {
+            // 1) 모든 탭 버튼을 비활성 상태(tab-non-active)로
+            document.querySelectorAll('.tab')
+                .forEach(el => {
+                    el.classList.remove('tab-active');
+                    el.classList.add('tab-non-active');
+                });
+
+            // 2) 클릭된 버튼(this)만 활성 상태(tab-active)로
+            btn.classList.remove('tab-non-active');
+            btn.classList.add('tab-active');
+
+            // 3) 모든 탭 콘텐츠를 숨기기
+            document.querySelectorAll('.content')
+                .forEach(el => el.classList.remove('content-active'));
+
+            // 4) 클릭된 탭과 연결된 콘텐츠만 보이기
+            document.getElementById(contentId)
+                .classList.add('content-active');
+        }
+    </script>
+
+</body>

@@ -2,7 +2,7 @@
 /* AI는 안해주니깐 직접 넣어주기 */
 
 * {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
 }
@@ -24,5 +24,62 @@ body {
 
 .container {
     width: 1320px;
-    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+button {
+    background: none;
+    border: none;
+    font-family: 'SUIT', sans-serif;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* 탭 감싸는 컨테이너 */
+.tab-navigation {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* 탭 버튼 공통 스타일 */
+.tab {
+    font-weight: var(--fw-regular);
+    font-size: 16px;
+    display: flex;
+    width: 160px;
+    height: 40px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.tab-active {
+    font-weight: var(--fw-semibold);
+    background: #242424;
+    color: #fff;
+}
+
+.tab-non-active {
+    background: #fff;
+    border: 1px solid #B3B3B3;
+    color: #444;
+}
+
+/* 탭 콘텐츠 영역 공통 */
+.tab-content {
+    border-top: 1px solid #b3b3b3;
+    padding: 20px;
+    margin-top: -1px;
+    /* 탭 테두리와 라인이 자연스럽게 연결되도록 */
+}
+
+/* 실제 콘텐츠 단위 (활성/비활성 제어용 클래스) */
+.content {
+    display: none;
+}
+
+.content-active {
+    display: block;
 }
