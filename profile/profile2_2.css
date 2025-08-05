@@ -22,11 +22,7 @@ body {
     color: #242424;
 }
 
-/* 폰트 특정 부분 생길 때 적용 *
-h1, .title {
-  font-weight: var(--fw-bold);
+.container {
+    width: 1320px;
+    margin: 0 auto;
 }
-
-h2, .subtitle {
-  font-weight: var(--fw-semibold);
-} */
