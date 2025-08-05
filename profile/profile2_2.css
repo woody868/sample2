@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* AI는 안해주니깐 직접 넣어주기 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전역 변수로 웨이트만 선언해두면 사용이 편리합니다 */
+:root {
+    --fw-regular: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+}
+
+/* body 에 패밀리 + 기본 웨이트 적용 */
+body {
+    font-family: 'SUIT', sans-serif;
+    font-weight: var(--fw-regular);
+    line-height: 1.5;
+    color: #242424;
+}
