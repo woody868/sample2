@@ -17,6 +17,7 @@
 /* body 에 패밀리 + 기본 웨이트 적용 */
 body {
     font-family: 'SUIT', sans-serif;
+    font-style: normal;
     font-weight: var(--fw-regular);
     line-height: 1.5;
     color: #242424;
@@ -78,6 +79,17 @@ button {
 /* 실제 콘텐츠 단위 (활성/비활성 제어용 클래스) */
 .content {
     display: none;
+}
+
+/* 1) 부모에만 주지 말고 h1에도 직접 크기를 지정 */
+.greetings h1 {
+    font-size: 80px;
+    /* 2em(=160px) 대신 80px을 직접 지정 */
+    line-height: 1.2;
+    /* 필요하면 여기에도 */
+    font-weight: var(--fw-regular);
+    margin: 0;
+    /* h1 기본 마진도 제거 */
 }
 
 .content-active {
