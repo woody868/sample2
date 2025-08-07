@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Page</title>
+</head>
+
+<body>
+    <header>
+        <h1>이벤트 페이지에 오신 것을 환영합니다</h1>
+    </header>
+    <main>
+        <section id="event-details">
+            <h2>이벤트 세부정보</h2>
+            <p>날짜: <span id="event-date">2023년 3월 15일</span></p>
+            <p>위치: <span id="event-location">123 Main St, Anytown, USA</span></p>
+        </section>
+        <section id="registration">
+            <h2>이벤트 등록</h2>
+            <form id="registration-form">
+                <label for="name">이름:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">이메일:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">등록</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="/sample2/event.js"></script>
+</body>
+
+</html>
