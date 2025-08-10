@@ -84,6 +84,7 @@ button {
     box-sizing: border-box;
 }
 
+/* profile 탭 콘텐츠 시작 */
 #profile.content-active {
     position: relative;
     display: flex;
@@ -324,45 +325,107 @@ button {
     margin-top: 100;
 }
 
-#experience {
-    padding: 100px;
+/* experience 탭 콘텐츠 시작 */
+#experience.content-active {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: 100%;
 }
 
 .career-timeline {
     position: relative;
     max-width: 1320px;
-    margin: 0 auto;
 }
 
-/* 곡선 배경 (나중에 추가) */
-.timeline-track::before {
+/* 기존 직선들은 그대로 두고 */
+/* 첫 번째 줄 선 */
+.timeline-list::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 400px;
-    background: url('curved-line.svg');
-    /* 곡선 이미지 */
-    background-repeat: no-repeat;
-    background-size: contain;
+    top: 8px;
+    left: 200px;
+    right: 200px;
+    height: 1px;
+    background: #242424;
+    z-index: 1;
+}
+
+/* 두 번째 줄 선 */
+.timeline-list::after {
+    content: '';
+    position: absolute;
+    top: 232px;
+    left: 200px;
+    right: 200px;
+    height: 1px;
+    background: #242424;
+    z-index: 1;
+}
+
+/* 세 번째 줄 선 */
+.career-timeline::before {
+    content: '';
+    position: absolute;
+    top: 456px;
+    left: 200px;
+    right: 200px;
+    height: 1px;
+    background: #242424;
+    z-index: 1;
+}
+
+/* =========================
+   2. 곡선 연결부
+   ========================= */
+/* 1번째 줄 → 2번째 줄 내려가는 곡선 */
+.curve-down-right {
+    position: absolute;
+    top: 8px;
+    right: -40px;
+    /* 직선 끝 위치와 맞춤 */
+    width: 240px;
+    height: 224px;
+    border: 1px solid #242424;
+    border-left: none;
+    /* border-top: none; */
+    border-radius: 0 200px 200px 0;
+    background: transparent;
+    z-index: 1;
+}
+
+/* 2번째 줄 → 3번째 줄 내려가는 곡선 */
+.curve-down-left {
+    position: absolute;
+    top: 232px;
+    left: -40px;
+    /* 직선 시작 위치와 맞춤 */
+    width: 240px;
+    height: 224px;
+    border: 1px solid #242424;
+    border-right: none;
+    /* border-top: none; */
+    border-radius: 200px 0 0 200px;
+    background: transparent;
+    z-index: 1;
 }
 
 /* 타임라인 아이템들 */
 .timeline-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 100px 60px;
+    gap: 100px 0px;
     position: relative;
     z-index: 2;
 }
 
 .timeline-item {
     display: flex;
+    width: 400px;
+    height: 124px;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    position: relative;
 }
 
 /* 동그란 점 */
@@ -372,9 +435,10 @@ button {
     height: 16px;
     background: #242424;
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     box-shadow: 0 0 0 6px rgba(0, 0, 0, 0.1);
     /* 바깥 6px 링 */
+    z-index: 3;
 }
 
 /* 첫 번째 점만 파란색 */
@@ -384,9 +448,18 @@ button {
 }
 
 .timeline-text {
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 20px;
+    line-height: 1.5;
     color: #242424;
+    font-weight: var(--fw-semibold);
+    text-align: center;
+}
+
+.timeline-date {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #242424;
+    font-weight: var(--fw-regular);
 }
 
 /* 실제 콘텐츠 단위 (활성/비활성 제어용 클래스) */
