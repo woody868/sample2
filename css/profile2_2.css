@@ -27,7 +27,7 @@ body {
     width: 1320px;
     margin: 40px auto 60px;
     height: calc(100vh - 160px);
-    overflow: hidden;
+    /* overflow: hidden; */
     box-sizing: border-box;
 }
 
