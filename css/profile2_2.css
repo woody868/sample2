@@ -441,11 +441,11 @@ button {
     z-index: 3;
 }
 
-/* 첫 번째 점만 파란색 */
+/* 첫 번째 점만 파란색
 .timeline-item:first-child::before {
     box-shadow: 0 0 0 6px rgba(39, 159, 244, 0.2);
     background: #279FF4;
-}
+} */
 
 .timeline-text {
     font-size: 20px;
